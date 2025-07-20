@@ -36,5 +36,7 @@ uvicorn main:app --reload
 ***
 ### blog
 
+https://zenn.dev/knaka0209/scraps/43dacda85609df
+
 ***
 

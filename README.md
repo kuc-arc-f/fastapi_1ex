@@ -19,5 +19,7 @@ fastapi , example
 ***
 ### blog
 
+https://zenn.dev/knaka0209/scraps/43dacda85609df
+
 ***
 
