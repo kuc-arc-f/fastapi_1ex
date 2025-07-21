@@ -43,5 +43,7 @@ uvicorn main:app --reload --port 8080
 ***
 ### blog
 
+https://zenn.dev/link/comments/ac44aa8b403de3
+
 ***
 
