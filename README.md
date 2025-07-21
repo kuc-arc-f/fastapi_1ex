@@ -6,7 +6,7 @@
 
  date    : 2025/07/20
 
- update :
+ update : 2025/07/21
 
 ***
 
@@ -19,6 +19,7 @@ fastapi , example
 
 * fast_4: react + fastAPI
 * react_2: react + SQLite, todo app
+* react_3: Google ADK + fastAPI
 
 ***
 ### changeLog
