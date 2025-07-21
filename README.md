@@ -18,6 +18,7 @@ fastapi , example
 ### example
 
 * fast_4: react + fastAPI
+* react_2: react + SQLite, todo app
 
 ***
 ### changeLog
