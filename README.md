@@ -2,8 +2,6 @@
 
  Version: 0.9.1
 
- Author  :
-
  date    : 2025/07/20
 
  update : 2025/07/21
