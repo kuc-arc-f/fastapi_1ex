@@ -4,7 +4,6 @@ import { useState , useEffect }  from 'react';
 import { marked } from 'marked';
 import AgentUtil from './lib/AgentUtil';
 import ApiUtil from '../lib/ApiUtil';
-//import { firstAgent } from '../agent/first-agent';
 import { toolSampleAgent } from '../agent/tool-sample-agent';
 
 export default function Chat() {
@@ -12,14 +11,6 @@ export default function Chat() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const initialAdk = async () => {
-      try{
-        await AgentUtil.initialAgent("", "tool_sample_agent");
-      }catch(e){
-        console.error(e);
-      }
-    };
-    initialAdk();
   }, []);
 
   const chatStart = async function(){
@@ -34,33 +25,26 @@ export default function Chat() {
       console.log("inText=", inText);
       if(!inText){ return; }
       setIsLoading(true);
-      const agentName = AgentUtil.validAgentName(inText.trim());
-      console.log("agentName=", agentName);
-      if(agentName){
-        let items = [];
-        if(agentName === "tool_sample_agent"){
-          items = toolSampleAgent();
-        }
-        console.log(items);
-
-        let htmAll = "";
-        const agentSendProc = async function(){
-          for(const row of items) {
-            htmAll += `<div class="label character-label w-full">${row.title}</div>`;
-            console.log(row);
-            let res = await AgentUtil.postAgent(row.text, "tool_sample_agent");
-            console.log(res);
-            htmAll += `<div class="chat-bubble character-bubble w-full">`;
-            htmAll += marked.parse(res);
-            htmAll +=  `</div>`
-            //console.log(htmAll);
-            setText(htmAll);
-          };
-          setIsLoading(false);
-        }
-        agentSendProc();
-        return;
-      }
+      const item = {
+        query: inText ,
+      };
+      const body: any = JSON.stringify(item);		
+      const res = await fetch("/api/rag_search", {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},      
+        body: body
+      });
+      if(res.ok === false){
+       throw new Error("res.OK = NG"); 
+      };
+      const text = await res.text();
+      const json = JSON.parse(text);
+      console.log(json);
+      //console.log(json.result);
+      const targetHtml = marked.parse(json.result);
+      setText(targetHtml);
+      setIsLoading(false);
+      return;
     } catch(e){
       console.error(e);
     }
@@ -70,11 +54,11 @@ export default function Chat() {
   <div className="mb-[200px]">
     <div className="flex flex-col w-full max-w-3xl py-4 mx-auto gap-4">
       <div className="flex flex-col gap-2 px-4 bg-white">
-        <h1 className="text-2xl font-bold">Agent-Chat</h1>
+        <h1 className="text-2xl font-bold">RAG-Chat</h1>
         <input
           id="input_text"
           type="text"
-          value="tool_sample_agent"
+          defaultValue=""
           className="w-full p-2 border border-gray-300 rounded dark:disabled:bg-gray-700"
           placeholder="Type your message..."
         />
@@ -88,7 +72,7 @@ export default function Chat() {
       </div>
       <div>
         <div dangerouslySetInnerHTML={{ __html: text }} id="get_text_wrap"
-          className="mb-8 p-2" />
+          className="mb-8 p-2 bg-gray-100" />
         {isLoading ? (
           <div 
           className="animate-spin rounded-full h-8 w-8 mx-4 border-t-4 border-b-4 border-blue-500">

@@ -159,8 +159,8 @@ def api_rag_search(item: SearchRequest):
 def post_text_api(item: ItemCreate):
     return "OK"
 
-@app.get("/foo", response_class=HTMLResponse)
-async def read_foo():
+@app.get("/", response_class=HTMLResponse)
+async def home_page():
     return """
     <!DOCTYPE html>
     <html>
