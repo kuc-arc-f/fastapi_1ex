@@ -34,6 +34,16 @@ uvicorn main:app --reload --port 8080
 ```
 
 ***
+* front
+
+```
+npm i
+npm run build
+```
+
+* open: http://localhost:8080/
+
+***
 * test-code: test.js
 
 ```js
