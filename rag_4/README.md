@@ -31,4 +31,6 @@ uvicorn main:app --reload --port 8000
 ***
 ### blog
 
+https://zenn.dev/knaka0209/scraps/5c85c6a926cffb
+
 ***
