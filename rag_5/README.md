@@ -15,7 +15,7 @@ fastAPI , RAG example
 * model: gemma3:4b
 * embedding: qwen3-embedding:0.6b
 * Python 3.13.4
-
+* pgvector use
 ***
 ### setup
 
