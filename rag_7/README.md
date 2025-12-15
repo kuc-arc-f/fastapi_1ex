@@ -28,6 +28,8 @@ pip install -r requirements.txt
 
 uvicorn main:app --reload --port 8080
 ```
+***
+* data path: ./data
 
 ***
 * vector data add
