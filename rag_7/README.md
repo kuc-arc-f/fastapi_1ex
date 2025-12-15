@@ -42,7 +42,10 @@ python embed.py
 npm i
 npm run build
 ```
+
 ***
 ### blog
+
+https://zenn.dev/link/comments/f0c57036ae6ee5
 
 ***
