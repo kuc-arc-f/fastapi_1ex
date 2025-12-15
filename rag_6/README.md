@@ -34,6 +34,9 @@ python embed.py
 ```
 
 ***
+* data path: ./data
+
+***
 * search
 ```
 python search.py
