@@ -59,4 +59,6 @@ python search.py
 ***
 ### blog
 
+https://zenn.dev/link/comments/12f74a8be3040b
+
 ***
