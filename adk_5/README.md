@@ -41,4 +41,6 @@ python embed.py
 ***
 ### blog
 
+https://zenn.dev/knaka0209/scraps/9a449140d2d451
+
 ***
