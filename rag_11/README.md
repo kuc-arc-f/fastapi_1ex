@@ -12,7 +12,7 @@
 
 RAG example , Qdrant
 
-* embedding: qwen3-embedding:0.6b
+* embedding: gemini-embedding-001
 * model: gemma3-27b
 * Python 3.13.4
 
