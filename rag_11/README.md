@@ -55,7 +55,10 @@ python embed.py
 ```
 python search.py
 ```
+
 ***
 ### blog
+
+https://zenn.dev/link/comments/0414c024bb8499
 
 ***
