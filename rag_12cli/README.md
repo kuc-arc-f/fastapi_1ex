@@ -58,7 +58,10 @@ python embed.py
 ```
 python search.py
 ```
+
 ***
 ### blog
+
+https://zenn.dev/knaka0209/scraps/ed0cab82931876
 
 ***
