@@ -52,4 +52,6 @@ pip install ollama
 ***
 ### blog
 
+https://zenn.dev/knaka0209/scraps/2cd333d76e43c0
+
 ***
