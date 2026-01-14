@@ -40,4 +40,6 @@ python search.py
 ***
 ### blog
 
+https://zenn.dev/knaka0209/scraps/9e0521a68131e9
+
 ***
