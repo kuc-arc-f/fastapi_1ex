@@ -51,4 +51,6 @@ pip install chromadb uuid
 ***
 ### blog
 
+https://zenn.dev/knaka0209/scraps/a82508b741cc4b
+
 ***
