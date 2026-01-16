@@ -29,7 +29,7 @@ def search(query):
     array_cosine_similarity(vector, CAST(? AS FLOAT[1024])) AS similarity
     FROM embeddings
     ORDER BY similarity DESC
-    LIMIT 2;
+    LIMIT 1;
     """
 
     resp = conn.execute(select_sql, [query_vec_str]).fetchall()
@@ -47,7 +47,8 @@ def search(query):
     else:
         matches = f"user query: {query_text}"
 
-    sendMessage = f"日本語で回答して欲しい\n {matches} \n"
+    sendMessage = f"日本語で回答して欲しい。\n "
+    sendMessage += f"概要して欲しい。\n\n {matches} \n"    
     #print(sendMessage)    
     return sendMessage
 
