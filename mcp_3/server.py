@@ -31,7 +31,7 @@ def search(query):
     #最も関連性の高いドキュメントを取得
     results = collection.query(
         query_embeddings=[response["embedding"]],
-        n_results=2
+        n_results=1
     )
     # 結果をdistancesでソートして表示
     documents = results['documents'][0]
@@ -55,7 +55,8 @@ def search(query):
         matches = f"user query: {query_text}"
     #print(matches)
 
-    sendMessage = f"日本語で回答して欲しい\n {matches} \n"
+    sendMessage = f"日本語で回答して欲しい。\n "
+    sendMessage += f"概要して欲しい。\n\n {matches} \n"    
     #print(sendMessage)
     return sendMessage
 
