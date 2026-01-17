@@ -28,7 +28,7 @@ def search(query):
         search_result = clientQdrant.query_points(
             collection_name=COLLE_NAME,
             query=query_vector,  # 生成したEmbedding（ベクトル）
-            limit=2,  # 上位n件を取得
+            limit=1,  # 上位n件を取得
         )
 
         for hit in search_result.points:
@@ -42,7 +42,8 @@ def search(query):
     else:
         matches = f"user query: {query_text}"
 
-    sendMessage = f"日本語で回答して欲しい\n {matches} \n"
+    sendMessage = f"日本語で回答して欲しい。\n "
+    sendMessage += f"要約して欲しい。\n\n {matches} \n"
     #print(sendMessage)
     return sendMessage
 
