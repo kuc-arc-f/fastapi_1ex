@@ -48,4 +48,6 @@ python search.py hello
 ***
 ### blog
 
+https://zenn.dev/knaka0209/scraps/2cf45419d0afcd
+
 ***
