@@ -49,4 +49,6 @@ npm run build
 ***
 ### blog
 
+https://zenn.dev/link/comments/f7a7156efebbab
+
 ***
