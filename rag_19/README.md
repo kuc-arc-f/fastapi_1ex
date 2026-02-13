@@ -42,7 +42,10 @@ python embed.py
 ```
 python search.py
 ```
+
 ***
 ### blog
+
+https://zenn.dev/knaka0209/scraps/3749880e894e2e
 
 ***
